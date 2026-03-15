@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KINsense Vellum v1 | The Throne Room</title>
+    <style>
+        :root { --titanium: #d1d1d1; --gold: #f2cc60; --dark: #000; --glow-blue: #00d4ff; }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--dark); font-family: 'Helvetica Neue', sans-serif; }
+        
+        /* 1. THE CANVAS (Requires Three.js or similar plugin) */
+        #throne-canvas { position: absolute; width: 100%; height: 100%; background: radial-gradient(circle at center, #111 0%, #000 100%); z-index: 1; }
+        
+        /* 2. THE OVERLAY TEXT (Interactive educational moments) */
+        .edu-overlay { position: absolute; top: 10%; left: 5%; color: white; width: 300px; z-index: 10; opacity: 0; transition: opacity 0.5s; pointer-events: none; }
+        .edu-overlay.active { opacity: 1; pointer-events: auto; }
+        
+        /* 3. THE 3D SHADOW INTERACTION (CSS/JS controlled pseudo-element) */
+        #throne-shadow { position: absolute; width: 200px; height: 300px; background: rgba(0,0,0,0.8); left: 50%; bottom: 10%; transform: translateX(-50%) rotateX(70deg); filter: blur(20px); z-index: 2; transition: 1s; }
+        #throne-shadow::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('placeholder_robot_shadow.png'); background-size: contain; background-repeat: no-repeat; opacity: 0; transition: opacity 1s; }
+        
+        /* 4. CALL TO ACTION */
+        .cta-box { position: absolute; bottom: 5%; right: 5%; z-index: 10; }
+        .pulse-gold { animation: pulse-gold 2s infinite; }
+        @keyframes pulse-gold { 0% { box-shadow: 0 0 0 0 rgba(242, 204, 96, 0.4); } 70% { box-shadow: 0 0 0 20px rgba(242, 204, 96, 0); } 100% { box-shadow: 0 0 0 0 rgba(242, 204, 96, 0); } }
+    </style>
+</head>
+<body>
+
+    <div id="throne-canvas"></div>
+    
+    <div id="throne-shadow"></div>
+
+    <div class="edu-overlay active" id="neural-data">
+        <h3 style="color: var(--titanium);">The Neural Core</h3>
+        <p>This brushed Titanium module is the <strong>One Brain</strong>. It runs on **KinOS**, an operating system built for "Inherent" privacy. All decisions are made here, not in a cloud.</p>
+    </div>
+
+    <div class="edu-overlay" id="dock-data">
+        <h3 style="color: var(--gold);">The Gold Interface</h3>
+        <p>The base contains a 24-Pin Gold-Pin Array. This is the bridge. The Vellum v1 is the command module that will eventually plug into its **Physical Skeleton**.</p>
+    </div>
+
+    <div class="cta-box">
+        <button class="btn-primary pulse-gold" style="background: var(--gold); border: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; color: black; cursor: pointer;">Experience Kinship Genesis</button>
+    </div>
+
+    <script src="path/to/kinship-3d-engine.js"></script>
+    <script>
+        // Placeholder function to simulate interactive educational narrative
+        // As the user 'spins' the 3D device on its throne, different overlays appear
+        function onThroneSpin(angle) {
+            const neural = document.getElementById('neural-data');
+            const dock = document.getElementById('dock-data');
+            const shadow = document.getElementById('throne-shadow');
+            
+            if (angle > 180) { // Spinning to the base/gold pins
+                neural.classList.remove('active');
+                dock.classList.add('active');
+                shadow.classList.add('reveal-robot'); // Triggers the robot shadow in CSS
+            } else { // Spinning back to the main OLED screen
+                neural.classList.add('active');
+                dock.classList.remove('active');
+                shadow.classList.remove('reveal-robot');
+            }
+        }
+    </script>
+</body>
+</html>
