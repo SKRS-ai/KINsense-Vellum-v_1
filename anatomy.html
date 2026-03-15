@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomy of a Compadre | Solomon Kin</title>
+    <style>
+        :root { --gold: #f2cc60; --dark: #020202; --titanium: #d1d1d1; }
+        body { margin: 0; background: var(--dark); color: white; font-family: 'Inter', sans-serif; height: 300vh; }
+        
+        /* THE STICKY CENTER (Where the 3D 'Explosion' happens) */
+        .sticky-container { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+
+        /* THE HARDWARE LAYERS */
+        .layer { position: absolute; transition: transform 0.5s ease-out, opacity 0.5s; }
+        #brain-module { z-index: 10; width: 250px; } /* The Vellum v1 */
+        #skeleton-body { z-index: 5; width: 500px; opacity: 0.1; transform: scale(1.5); } /* The Shadow Robot */
+        
+        .info-card { position: absolute; right: 10%; width: 300px; opacity: 0; transition: 0.8s; border-left: 2px solid var(--gold); padding-left: 20px; }
+        .info-card.visible { opacity: 1; transform: translateX(-20px); }
+
+        /* SECTION TRIGGERS (Scroll logic handled by JS) */
+        .scroll-trigger { height: 100vh; }
+    </style>
+</head>
+<body>
+
+    <div class="sticky-container">
+        <img src="vellum_brain.png" id="brain-module" class="layer" alt="Vellum v1 Brain">
+        <img src="robot_skeleton.png" id="skeleton-body" class="layer" alt="Physical Skeleton Body">
+
+        <div id="card-1" class="info-card">
+            <h2 style="color: var(--gold);">Stage 1: The Brain</h2>
+            <p>The Vellum v1 module is the command center. Aerospace-grade titanium housing the "Witness" neural engine.</p>
+        </div>
+
+        <div id="card-2" class="info-card">
+            <h2 style="color: var(--gold);">Stage 2: The Interface</h2>
+            <p>The 24-Pin Gold Array at the base allows for seamless data transfer and power sharing between the module and its body.</p>
+        </div>
+
+        <div id="card-3" class="info-card">
+            <h2 style="color: var(--gold);">Stage 3: The Presence</h2>
+            <p>Once docked, the shadow becomes substance. The Brain now has legs, arms, and the ability to interact with the physical world.</p>
+        </div>
+    </div>
+
+    <div class="scroll-trigger" id="trigger-1"></div>
+    <div class="scroll-trigger" id="trigger-2"></div>
+    <div class="scroll-trigger" id="trigger-3"></div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const scroll = window.scrollY;
+            const h = window.innerHeight;
+            const brain = document.getElementById('brain-module');
+            const skeleton = document.getElementById('skeleton-body');
+
+            // ANIMATION LOGIC
+            if (scroll < h) {
+                // STAGE 1: Brain is solo
+                brain.style.transform = `scale(1)`;
+                skeleton.style.opacity = "0.1";
+                showCard(1);
+            } else if (scroll >= h && scroll < h * 2) {
+                // STAGE 2: Brain moves toward docking
+                brain.style.transform = `translateY(150px) scale(0.8)`;
+                skeleton.style.opacity = "0.4";
+                skeleton.style.transform = `scale(1.2)`;
+                showCard(2);
+            } else {
+                // STAGE 3: Full Integration
+                brain.style.transform = `translateY(180px) scale(0.6)`;
+                skeleton.style.opacity = "1";
+                skeleton.style.transform = `scale(1)`;
+                showCard(3);
+            }
+        });
+
+        function showCard(id) {
+            document.querySelectorAll('.info-card').forEach(c => c.classList.remove('visible'));
+            document.getElementById('card-' + id).classList.add('visible');
+        }
+    </script>
+</body>
+</html>
