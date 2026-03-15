@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>THE REVELATION | Solomon Kin Vellum v1</title>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.28/build/spline-viewer.js"></script>
+    <style>
+        :root { --gold: #f2cc60; --dark: #020202; --titanium: #a1a1a1; }
+        body, html { margin: 0; padding: 0; background: var(--dark); color: white; overflow-x: hidden; }
+
+        /* THE THRONE SCENE */
+        .throne-container { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+        spline-viewer { width: 100%; height: 100%; }
+
+        /* THE INTERACTIVE SHADOW (Overlay) */
+        .shadow-layer {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 40%;
+            background: linear-gradient(to top, rgba(0,0,0,1), transparent);
+            pointer-events: none; z-index: 5;
+        }
+
+        /* TEXT OVERLAYS */
+        .content-overlay {
+            position: absolute; top: 50%; left: 10%; transform: translateY(-50%);
+            max-width: 400px; z-index: 10;
+        }
+        .reveal-tag { font-family: 'Space Mono', monospace; color: var(--gold); letter-spacing: 4px; font-size: 0.8rem; }
+        h1 { font-size: 4rem; margin: 10px 0; text-transform: uppercase; line-height: 0.9; }
+        
+        /* THE 'ROBOT' GHOST EFFECT (Appears in the Shadow) */
+        .skeleton-ghost {
+            position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%);
+            width: 300px; height: 500px; opacity: 0;
+            background: url('path_to_robot_silhouette.png') no-repeat center;
+            background-size: contain; filter: drop-shadow(0 0 20px var(--gold));
+            transition: opacity 2s ease-in-out;
+            mix-blend-mode: color-dodge; pointer-events: none;
+        }
+        
+        /* HOVER TRIGGER: When you look at the 'Pins' the Robot appears */
+        .throne-container:hover .skeleton-ghost { opacity: 0.25; }
+    </style>
+</head>
+<body>
+
+    <div class="throne-container">
+        <spline-viewer url="https://prod.spline.design/your-throne-scene-id/scene.splinecode"></spline-viewer>
+        
+        <div class="shadow-layer"></div>
+        <div class="skeleton-ghost" id="robotShadow"></div>
+
+        <div class="content-overlay">
+            <span class="reveal-tag">PHASE 01: THE BRAIN</span>
+            <h1>The <br>Throne <br>Room.</h1>
+            <p>The Vellum v1 is the sovereign center of the Kinship. It sits on the throne of your data, protecting your truth.</p>
+            
+            <div style="margin-top: 40px; border-left: 2px solid var(--gold); padding-left: 20px;">
+                <p style="font-size: 0.9rem; color: var(--titanium);">
+                    <strong>Interactive Instruction:</strong><br>
+                    Rotate the module to reveal the 24-Pin Gold Array. Watch the shadow for the "Quickening" of the physical skeleton.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
