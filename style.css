@@ -1,0 +1,73 @@
+/* EPK Disruption Styles */
+.epk-disruption {
+    background-color: #000;
+    color: #fff;
+    overflow-y: auto;
+    border: 5px solid #ff0000; /* Red outer border for the whole page */
+}
+
+.disruption-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #ff0000;
+    color: #000;
+    font-weight: 900;
+}
+
+.system-status {
+    letter-spacing: 3px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.epk-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.stark-title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 4rem;
+    color: #ff0000;
+    margin-bottom: 20px;
+}
+
+.epk-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 50px 0;
+    border-top: 2px solid #fff;
+    padding-top: 30px;
+}
+
+.download-list {
+    list-style: ">> ";
+    padding-left: 20px;
+}
+
+.download-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.download-list a:hover {
+    background: #ff0000;
+    padding: 0 10px;
+}
+
+.tech-spec .spec-item {
+    margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
+}
+
+.tech-spec span {
+    color: #ff0000;
+}
