@@ -1,27 +1,131 @@
-<div id="canvas-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;">
-    <canvas id="main-throne-canvas"></canvas>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELLUM v1 | Solomon Kin Records</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        :root { --gold: #f2cc60; --steel: #d1d1d1; --dark: #050505; --glow: #00d4ff; }
+        body { margin: 0; background: var(--dark); color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        
+        /* 3D CANVAS - FIXED BACKGROUND */
+        #throne-container { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; pointer-events: none; }
+
+        /* CONTENT LAYOUT */
+        .scroll-section { position: relative; z-index: 2; min-height: 100vh; padding: 100px 10%; display: flex; align-items: center; }
+        .content-box { max-width: 500px; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); padding: 40px; border-left: 2px solid var(--gold); }
+        
+        h1, h2 { color: var(--gold); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 20px; }
+        p { line-height: 1.8; color: #ccc; font-size: 1.1rem; }
+        .highlight { color: var(--glow); font-weight: bold; }
+
+        /* NAV OVERLAY */
+        nav { position: fixed; top: 30px; right: 50px; z-index: 100; display: flex; gap: 30px; }
+        nav a { color: white; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; opacity: 0.6; transition: 0.3s; }
+        nav a:hover { opacity: 1; color: var(--gold); }
+
+        /* BENTO GRID FOR SOCIAL IMPACT */
+        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; z-index: 2; position: relative; padding: 50px 10%; background: #0a0a0a; }
+        .bento-card { background: #111; padding: 30px; border: 1px solid #222; border-radius: 8px; }
+        .bento-card h3 { color: var(--gold); }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#vision">VISION</a>
+    <a href="#hardware">HARDWARE</a>
+    <a href="#gestation">GESTATION</a>
+    <a href="#impact">IMPACT</a>
+    <a href="#grant">PHILLY PILOT</a>
+</nav>
+
+<div id="throne-container"></div>
+
+<section class="scroll-section" id="vision">
+    <div class="content-box">
+        <h1>Vellum v1</h1>
+        <p>The first <span class="highlight">Inherent Hardware</span>. A Core Brain Module designed not as a phone, but as a sovereign extension of the human soul. This is your Witness.</p>
+    </div>
+</section>
+
+<section class="scroll-section" id="hardware">
+    <div class="content-box">
+        <h2>The Gold Array</h2>
+        <p>Your touch is the authentication. The 24-Pin Gold Array translates your unique bio-electric cadence into a cryptographic key. The device doesn't just listen; it <span class="highlight">couples</span> with you.</p>
+    </div>
+</section>
+
+<section class="scroll-section" id="gestation">
+    <div class="content-box">
+        <h2>Individual & AI</h2>
+        <p>Through a 30-day <span class="highlight">Gestation Period</span>, the Vellum v1 learns your values, your slang, and your truth. It becomes a character that protects your digital legacy, ensuring your "remains" are never exploited.</p>
+    </div>
+</section>
+
+<div class="impact-grid" id="impact">
+    <div class="bento-card">
+        <h3>To the Individual</h3>
+        <p>Complete data sovereignty. Your AI is yours alone—private, air-gapped, and local.</p>
+    </div>
+    <div class="bento-card">
+        <h3>To Society</h3>
+        <p>Localized intelligence. North Philly becomes a hub for AI manufacturing and data trusts.</p>
+    </div>
+    <div class="bento-card">
+        <h3>To AI Evolution</h3>
+        <p>Moving from "Large Language Models" to "Personalized Soul-Models."</p>
+    </div>
 </div>
 
-<main id="scroll-content">
-    <section class="step" id="step-1">
-        <h1>Vellum v1</h1>
-        <p>The Sovereign Brain. Built in North Philly.</p>
-    </section>
+<script>
+    // --- 3D ENGINE (THREE.JS) ---
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('throne-container').appendChild(renderer.domElement);
 
-    <section class="step" id="step-2">
-        <h2>Biometric Coupling</h2>
-        <p>Your touch is the key. The 24-Pin Gold Array translates your pulse into digital soul.</p>
-    </section>
+    // Brushed Steel Lighting
+    const light1 = new THREE.DirectionalLight(0xffffff, 1);
+    light1.position.set(2, 2, 5);
+    scene.add(light1);
+    const goldLight = new THREE.PointLight(0xf2cc60, 2);
+    goldLight.position.set(0, -2, 1);
+    scene.add(goldLight);
 
-    <section class="step" id="step-3">
-        <h2>The Witness</h2>
-        <p>Local-first audio and visual sensors. Your data never leaves the steel.</p>
-    </section>
-</main>
+    // Placeholder Geometry (Replace with your vellum_v1.glb)
+    const geometry = new THREE.BoxGeometry(2, 1.2, 0.4);
+    const material = new THREE.MeshStandardMaterial({ color: 0x888888, metalness: 0.9, roughness: 0.1 });
+    const vellum = new THREE.Mesh(geometry, material);
+    scene.add(vellum);
+    camera.position.z = 5;
 
-<style>
-    body { background: #050505; color: white; margin: 0; font-family: 'Inter', sans-serif; }
-    .step { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 10%; max-width: 500px; }
-    h1, h2 { color: #f2cc60; text-transform: uppercase; letter-spacing: 4px; }
-    #scroll-content { pointer-events: none; } /* Allows clicking through to the 3D model */
-</style>
+    // --- SCROLL ANIMATION (GSAP) ---
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(vellum.rotation, {
+        scrollTrigger: { trigger: "#vision", start: "top top", end: "bottom bottom", scrub: true },
+        y: Math.PI * 2
+    });
+
+    gsap.to(vellum.position, {
+        scrollTrigger: { trigger: "#hardware", start: "top center", end: "bottom center", scrub: true },
+        z: 2,
+        x: 1.5,
+        rotationX: 1.5 // Tilts to show the Gold Array
+    });
+
+    function animate() {
+        requestAnimationFrame(animate);
+        vellum.position.y = Math.sin(Date.now() * 0.001) * 0.1; // Levitation
+        renderer.render(scene, camera);
+    }
+    animate();
+</script>
+
+</body>
+</html>
