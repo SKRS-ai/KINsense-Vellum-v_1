@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Liaison | Solomon Kin Records LLC</title>
+    <style>
+        :root { --gold: #f2cc60; --dark: #050505; --philly-blue: #004b8d; }
+        body { background: var(--dark); color: white; font-family: 'Inter', sans-serif; margin: 0; }
+        .contact-layout { display: grid; grid-template-columns: 1fr 1fr; height: 100vh; }
+        
+        /* THE VISUAL SIDE (The Lab) */
+        .visual-side { background: url('lab_interior_blur.jpg') center/cover; position: relative; border-right: 1px solid #222; }
+        .visual-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; padding: 60px; }
+        
+        /* THE FORM SIDE */
+        .form-side { padding: 80px; overflow-y: auto; }
+        .input-group { margin-bottom: 25px; }
+        label { display: block; color: var(--gold); font-size: 0.8rem; margin-bottom: 8px; text-transform: uppercase; }
+        input, textarea, select { width: 100%; background: #111; border: 1px solid #333; padding: 15px; color: white; border-radius: 4px; }
+        input:focus { border-color: var(--gold); outline: none; }
+        
+        .btn-submit { background: var(--gold); color: black; font-weight: bold; padding: 18px 40px; border: none; cursor: pointer; transition: 0.3s; width: 100%; }
+        .btn-submit:hover { background: #e0b84d; }
+    </style>
+</head>
+<body>
+
+<div class="contact-layout">
+    <div class="visual-side">
+        <div class="visual-overlay">
+            <div>
+                <h1 style="font-size: 3rem;">Direct <br>Liaison.</h1>
+                <p style="color: #888; max-width: 400px;">
+                    For grant inquiries regarding <strong>Opportunity #21260128120838</strong>, 
+                    please select "City Relations" in the inquiry type to ensure priority routing.
+                </p>
+                <div style="margin-top: 40px;">
+                    <p><strong>Headquarters:</strong> 22nd & Lehigh, Philadelphia, PA</p>
+                    <p><strong>Email:</strong> liaison@solomonkin.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-side">
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label>Inquiry Type</label>
+                <select>
+                    <option>Grant & City Relations</option>
+                    <option>Vanguard Investment</option>
+                    <option>Technical Partnership</option>
+                    <option>Press & Media</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="e.g. Destiny Gadson">
+            </div>
+
+            <div class="input-group">
+                <label>Organization / Department</label>
+                <input type="text" placeholder="e.g. Dept. of Commerce">
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="name@phila.gov">
+            </div>
+
+            <div class="input-group">
+                <label>Message</label>
+                <textarea rows="5" placeholder="How can we advance the Kinship together?"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">INITIATE CONNECTION</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
