@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>THE LIVING LAB | KINsense AR</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <style>
+        :root { --gold: #f2cc60; --bg: #050505; }
+        body { margin: 0; background: var(--bg); color: white; font-family: 'Inter', sans-serif; }
+        
+        .ar-container { width: 100vw; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        
+        model-viewer {
+            width: 100%;
+            height: 70%;
+            background-color: var(--bg);
+            --poster-color: transparent;
+        }
+
+        .ar-instructions {
+            padding: 40px; text-align: center; max-width: 600px;
+            border-top: 1px solid #222; background: linear-gradient(to top, #111, transparent);
+        }
+
+        .ar-button {
+            background: var(--gold); border-radius: 30px; padding: 16px 32px;
+            color: black; font-weight: bold; border: none; cursor: pointer;
+            position: absolute; bottom: 10%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ar-container">
+    <model-viewer 
+        src="vellum_v1_throne.glb" 
+        ios-src="vellum_v1_throne.usdz"
+        ar ar-modes="webxr scene-viewer quick-look" 
+        camera-controls poster="poster.webp" 
+        shadow-intensity="2" exposure="1" environment-image="neutral">
+        
+        <button slot="ar-button" class="ar-button">
+            👋 PLACE IN YOUR ROOM
+        </button>
+    </model-viewer>
+
+    <div class="ar-instructions">
+        <h2 style="color: var(--gold);">The Anatomy of Presence</h2>
+        <p>Use your phone to project the <strong>Vellum v1</strong> onto your table. Rotate the module to see the gold-pin array—the gateway to its future physical body.</p>
+        <p style="font-size: 0.8rem; opacity: 0.6;">(Stage 02 Revelation: View the floor shadow in AR to see the skeletal robot silhouette.)</p>
+    </div>
+</div>
+
+</body>
+</html>
