@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Kinship | Vanguard Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --accent: #58a6ff; --bg: #0d1117; --card: #161b22; }
+        body { background: var(--bg); color: #c9d1d9; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        .portal-grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+        
+        /* Advocacy Side */
+        .advocacy-side { padding: 60px; background: linear-gradient(135deg, #0d1117 0%, #161b22 100%); border-right: 1px solid #30363d; }
+        .petition-card { background: rgba(88, 166, 255, 0.05); border: 1px dashed var(--accent); padding: 25px; border-radius: 8px; margin-top: 40px; }
+        .backing-meter { height: 12px; background: #30363d; border-radius: 6px; overflow: hidden; margin: 15px 0; }
+        .meter-fill { height: 100%; background: var(--accent); box-shadow: 0 0 10px var(--accent); width: 78%; }
+
+        /* Login/Registration Side */
+        .auth-side { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+        .auth-form { max-width: 400px; width: 100%; margin: 0 auto; }
+        input { width: 100%; padding: 12px; margin: 10px 0; background: #0d1117; border: 1px solid #30363d; color: white; border-radius: 6px; }
+        .btn-gold { background: #f2cc60; color: #000; padding: 15px; border: none; border-radius: 6px; width: 100%; cursor: pointer; font-weight: bold; font-size: 1rem; }
+        .giving-vault-info { margin-top: 30px; font-size: 0.85rem; color: #8b949e; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div class="portal-grid">
+    <section class="advocacy-side">
+        <h1>The Movement</h1>
+        <p>Your signature is the first step toward a Kinfully connected future. Help us prove to the city that Philadelphia demands <strong>Digital Sovereignty</strong>.</p>
+        
+        <div class="petition-card">
+            <h3>Active Petition: The Right to Inherent Data</h3>
+            <p>Demanding that all AI companions be unbound from corporate clouds by 2027.</p>
+            <div class="backing-meter"><div class="meter-fill"></div></div>
+            <p><strong>8,942 / 10,000 Signatures Reached</strong></p>
+            <button class="btn-gold" style="background: transparent; border: 1px solid var(--accent); color: var(--accent);">Sign Petition</button>
+        </div>
+
+        <div class="newsletter-box" style="margin-top: 40px;">
+            <h3>The Kinship Pulse</h3>
+            <p>Subscribe to our newsletter for exclusive updates from the North Philly Lab.</p>
+        </div>
+    </section>
+
+    <section class="auth-side">
+        <div class="auth-form">
+            <h2 style="color: white;">Vanguard Access</h2>
+            <p>Login to your portal to manage support, view your Ledger, and connect your Vellum.</p>
+            
+            <form>
+                <input type="email" placeholder="Partner Email">
+                <input type="password" placeholder="Secure Passphrase">
+                <button type="submit" class="btn-gold">Enter the Kinship</button>
+            </form>
+
+            <div style="text-align: center; margin: 20px 0;">or</div>
+            <button class="btn-gold" style="background: #30363d; color: white;">Register New Identity</button>
+
+            <div class="giving-vault-info">
+                <p>🔒 <strong>The Giving Vault:</strong> Link your card inside to sponsor the Pilot or donate to the Movement. All transactions are Kinfully encrypted.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
