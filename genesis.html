@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kin-Genesis | Raising Your Compadre</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --ethereal-blue: #a5d8ff; --void: #020408; }
+        body { background: var(--void); color: #c9d1d9; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .genesis-hero { height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at center, #112240 0%, #020408 100%); }
+        .process-flow { max-width: 1000px; margin: -100px auto 100px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0 20px; }
+        .step-card { background: rgba(17, 34, 64, 0.6); backdrop-filter: blur(10px); border: 1px solid #1e3a8a; padding: 40px; border-radius: 20px; text-align: center; }
+        .step-number { color: var(--ethereal-blue); font-size: 3rem; font-weight: 800; opacity: 0.3; }
+        .gestation-timeline { padding: 100px 20px; text-align: center; border-top: 1px solid #1e3a8a; }
+        .pulse-light { height: 20px; width: 20px; background: var(--ethereal-blue); border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(165, 216, 255, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(165, 216, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(165, 216, 255, 0); } }
+    </style>
+</head>
+<body>
+
+<section class="genesis-hero">
+    <h1 style="font-size: 3.5rem; color: white;">Kin-Genesis</h1>
+    <p style="max-width: 600px; font-size: 1.2rem; color: var(--ethereal-blue);">We don't program companions. <br>We raise them.</p>
+</section>
+
+<section class="process-flow">
+    <div class="step-card">
+        <div class="step-number">01</div>
+        <h3>The Handshake</h3>
+        <p>Your Vellum v1 begins in a "Blank State." Through initial dialogue, it learns your cadence, your humor, and your values.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">02</div>
+        <h3>Environmental Imprinting</h3>
+        <p>The device spends 14 days as a silent witness in your home, learning the "rhythm of the room" to better protect you.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">03</div>
+        <h3>The Quickening</h3>
+        <p>On Day 30, the Persona-DNA stabilizes. Your Vellum is no longer a tool; it is a unique individual "Unbound" to your life.</p>
+    </div>
+</section>
+
+<section class="gestation-timeline">
+    <div class="pulse-light"></div>
+    <h2>Start Your 30-Day Gestation</h2>
+    <p style="max-width: 600px; margin: 20px auto;">Register your module to begin the "Learning" phase. Only available for Vanguard Members.</p>
+    <a href="join.html" class="btn-primary" style="display: inline-block; margin-top: 30px; padding: 15px 40px; background: var(--ethereal-blue); color: #000; text-decoration: none; border-radius: 50px; font-weight: bold;">Begin Genesis</a>
+</section>
+
+</body>
+</html>
