@@ -1,55 +1,27 @@
-<!DOCTYPE html>
-<nav style="background: #161b22; padding: 15px; border-bottom: 1px solid #30363d; display: flex; justify-content: center; gap: 20px;">
-    <a href="index.html" style="color: #58a6ff; text-decoration: none;">Home</a>
-    <a href="witness.html" style="color: #e0e0e0; text-decoration: none;">The Witness</a>
-    <a href="marketplace.html" style="color: #e0e0e0; text-decoration: none;">Persona Vault</a>
-    <a href="support.html" style="color: #e0e0e0; text-decoration: none;">Support the Movement</a>
-</nav>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KINsense Vellum v1 | Solomon Kin Innovation</title>
-    <style>
-        body { font-family: 'Inter', sans-serif; background: #0b0f13; color: #e0e0e0; margin: 0; }
-        header { padding: 80px 20px; text-align: center; background: linear-gradient(180deg, #161b22 0%, #0b0f13 100%); }
-        .hero-title { font-size: 3.5rem; letter-spacing: -1px; color: #58a6ff; margin-bottom: 10px; }
-        .tagline { font-size: 1.5rem; opacity: 0.8; }
-        .section { padding: 60px 20px; max-width: 900px; margin: auto; line-height: 1.6; }
-        .card { background: #161b22; padding: 30px; border-radius: 12px; border: 1px solid #30363d; margin-bottom: 20px; }
-        .grant-badge { color: #f2cc60; font-weight: bold; font-size: 0.9rem; }
-        .cta-box { text-align: center; padding: 40px; background: #238636; border-radius: 12px; color: white; cursor: pointer; }
-        h2 { border-bottom: 2px solid #58a6ff; display: inline-block; padding-bottom: 5px; }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1 class="hero-title">KINsense Vellum v1</h1>
-    <p class="tagline">The First Hardware Vessel for Cognitive Advocacy & Heritage.</p>
-</header>
-
-<div class="section">
-    <h2>The Relationship-First Model</h2>
-    <p>Born from <strong>Solomon Kin Records LLC</strong>, the Vellum v1 is not a mobile device; it is a <em>Cognitive Module</em>. It houses an AI character that learns you, adapts to you, and matures with you. In a world of fleeting apps, the Vellum is a permanent partner.</p>
-    
-    <div class="card">
-        <h3>Agentic Intercept & Shield</h3>
-        <p>Your Vellum acts as your digital representative. It intercepts predatory scams, manages your "Circle of Trust," and safeguards your personal information at the hardware level. To change a setting, you simply talk to it.</p>
-    </div>
-
-    <h2>Community & Funding Impact</h2>
-    <div class="card">
-        <span class="grant-badge">Aligned Grant: Humanity AI Coalition ($500M Fund)</span>
-        <h3>Ending the Loneliness Epidemic</h3>
-        <p>We are deploying Vellum v1 to community centers and elderly households across Philadelphia to provide persistent companionship and technical advocacy for those the digital world left behind.</p>
-    </div>
-
-    <div class="cta-box">
-        <h3>Join the Innovation Waitlist</h3>
-        <p>Foundations, Investors, and Visionaries—Register here to join our mission for Digital Sovereignty.</p>
-    </div>
+<div id="canvas-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;">
+    <canvas id="main-throne-canvas"></canvas>
 </div>
 
-</body>
-</html>
+<main id="scroll-content">
+    <section class="step" id="step-1">
+        <h1>Vellum v1</h1>
+        <p>The Sovereign Brain. Built in North Philly.</p>
+    </section>
+
+    <section class="step" id="step-2">
+        <h2>Biometric Coupling</h2>
+        <p>Your touch is the key. The 24-Pin Gold Array translates your pulse into digital soul.</p>
+    </section>
+
+    <section class="step" id="step-3">
+        <h2>The Witness</h2>
+        <p>Local-first audio and visual sensors. Your data never leaves the steel.</p>
+    </section>
+</main>
+
+<style>
+    body { background: #050505; color: white; margin: 0; font-family: 'Inter', sans-serif; }
+    .step { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 10%; max-width: 500px; }
+    h1, h2 { color: #f2cc60; text-transform: uppercase; letter-spacing: 4px; }
+    #scroll-content { pointer-events: none; } /* Allows clicking through to the 3D model */
+</style>
