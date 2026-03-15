@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Persona Vault | Vexilla Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --gold: #f2cc60; --dark-slate: #1c2128; --electric: #58a6ff; }
+        body { background: #0d1117; color: #c9d1d9; }
+        .vault-header { text-align: center; padding: 80px 20px; background: linear-gradient(to bottom, #161b22, #0d1117); }
+        
+        .persona-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; padding: 60px; }
+        .persona-card { background: var(--dark-slate); border: 1px solid #30363d; border-radius: 16px; overflow: hidden; transition: transform 0.4s; }
+        .persona-card:hover { transform: translateY(-10px); border-color: var(--gold); }
+        
+        .persona-img { height: 250px; background-size: cover; background-position: center; filter: grayscale(40%); }
+        .persona-info { padding: 25px; }
+        .persona-tag { font-size: 0.7rem; text-transform: uppercase; color: var(--electric); letter-spacing: 1px; border: 1px solid var(--electric); padding: 2px 8px; border-radius: 4px; }
+        
+        .dna-stats { margin-top: 15px; display: flex; justify-content: space-between; font-size: 0.8rem; color: #8b949e; }
+        .btn-infuse { display: block; width: 100%; text-align: center; padding: 12px; background: transparent; border: 1px solid var(--gold); color: var(--gold); margin-top: 20px; text-decoration: none; border-radius: 8px; font-weight: bold; }
+        .btn-infuse:hover { background: var(--gold); color: #000; }
+    </style>
+</head>
+<body>
+
+<section class="vault-header">
+    <h1 style="font-size: 3rem; color: white;">The Persona-DNA Vault</h1>
+    <p style="max-width: 600px; margin: 0 auto;">One Module. Infinite Souls. Infuse your Vellum v1 with a character that matches your spirit.</p>
+</section>
+
+<section class="persona-grid">
+    <div class="persona-card">
+        <div class="persona-img" style="background-image: url('https://image_placeholder_orion.jpg');"></div>
+        <div class="persona-info">
+            <span class="persona-tag">Sentinel Class</span>
+            <h3>Orion-01</h3>
+            <p>A stoic, vigilant protector. Specialized in threat detection and passive guarding. Perfect for those who value security above all.</p>
+            <div class="dna-stats">
+                <span>Compassion: 40%</span>
+                <span>Vigilance: 95%</span>
+            </div>
+            <a href="#" class="btn-infuse">Infuse Module</a>
+        </div>
+    </div>
+
+    <div class="persona-card">
+        <div class="persona-img" style="background-image: url('https://image_placeholder_muse.jpg');"></div>
+        <div class="persona-info">
+            <span class="persona-tag">Creative Class</span>
+            <h3>The Muse</h3>
+            <p>A fluid, conversational partner for the artist. Captures creative sparks and organizes them into the Legacy Ledger.</p>
+            <div class="dna-stats">
+                <span>Empathy: 90%</span>
+                <span>Logic: 50%</span>
+            </div>
+            <a href="#" class="btn-infuse">Infuse Module</a>
+        </div>
+    </div>
+
+    <div class="persona-card">
+        <div class="persona-img" style="background-image: url('https://image_placeholder_legacy.jpg');"></div>
+        <div class="persona-info">
+            <span class="persona-tag">Custom DNA</span>
+            <h3>Kin-Genesis</h3>
+            <p>Build your own. Use our dialogue-led gestation process to create a character that mirrors your history and humor.</p>
+            <a href="join.html" class="btn-infuse" style="border-color: var(--electric); color: var(--electric);">Start Gestation</a>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
