@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KINsense | Technical Appendix v1.0</title>
+    <style>
+        :root {
+            --axiom-steel: #b4b8bc;
+            --blueprint-blue: #0a192f;
+            --data-gold: #ffcc00;
+            --witness-glow: #00f2ff;
+            --basalt: #121212;
+        }
+
+        body {
+            background-color: var(--blueprint-blue);
+            color: white;
+            font-family: 'Inter', -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            border-bottom: 1px solid var(--axiom-steel);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .protocol-id {
+            color: var(--data-gold);
+            font-family: monospace;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .spec-image {
+            width: 100%;
+            border: 2px solid var(--axiom-steel);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .spec-content h2 {
+            color: var(--witness-glow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .data-table td {
+            padding: 12px;
+            border: 1px solid rgba(180, 184, 188, 0.3);
+        }
+
+        .label {
+            font-weight: bold;
+            color: var(--axiom-steel);
+            width: 35%;
+        }
+
+        .value {
+            color: var(--data-gold);
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="protocol-id">PROTOCOL: #21260128120838 LOCKED</span>
+        <h1>Axiom Core: Technical Appendix</h1>
+        <p>Philly Pilot Site: 22nd & Lehigh Corridor | Hardware Revision: Vellum v1</p>
+    </header>
+
+    <div class="grid">
+        <div class="visual-pane">
+            <img src="page_14_exploded_view.png" alt="Exploded Schematic of Axiom Core" class="spec-image">
+        </div>
+        
+        <div class="spec-content">
+            <h2>Hardware Architecture</h2>
+            <p>The Axiom Core is a "Solid Plant" infrastructure designed for decentralized neighborhood witnessing. It utilizes a high-bandwidth Neural Processing Unit (NPU) to manage local data trust without cloud dependency.</p>
+            
+            <table class="data-table">
+                <tr>
+                    <td class="label">Processing</td>
+                    <td class="value">Neural Edge Engine (15.8 TOPS)</td>
+                </tr>
+                <tr>
+                    <td class="label">Sensor Stack</td>
+                    <td class="value">4x Multi-Spectral Witness Array</td>
+                </tr>
+                <tr>
+                    <td class="label">Security</td>
+                    <td class="value">24-Pin Gold Biometric Coupling</td>
+                </tr>
+                <tr>
+                    <td class="label">Memory</td>
+                    <td class="value">Holographic Vault (Local Persistence)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <hr style="margin: 60px 0; border: 0; border-top: 1px solid var(--axiom-steel);">
+
+    <div class="grid">
+        <div class="spec-content">
+            <h2>The Coupling Protocol</h2>
+            <p>User validation is performed via the Reverse-Polarity Biometric Array. This ensures that a persona is only accessible when a physical, local connection is established within the pilot geofence.</p>
+            <img src="page_22_the_coupling_spark.png" alt="Biometric Coupling Ritual" class="spec-image" style="margin-top:20px;">
+        </div>
+
+        <div class="visual-pane">
+            <h2>Verification Status</h2>
+            <img src="page_23_successful_verified.png" alt="Verified Status Shield" class="spec-image">
+            <p style="text-align: center; color: var(--data-gold); font-weight: bold;">
+                [GRANT SHIELD ACTIVE]
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 KINsense | Confidential for Philadelphia Department of Commerce Grant Review
+    </footer>
+</div>
+
+</body>
+</html>
