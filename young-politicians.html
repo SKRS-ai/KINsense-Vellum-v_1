@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Young Politicians™ | TBBLUSA.ORG Youth Leadership</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold-leaf: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --liturgical-blue: #0a192f;
+            --legal-black: #050505;
+            --marble-white: #f8f9fa;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background: url('https://www.transparenttextures.com/patterns/white-marble.png'), var(--marble-white);
+            color: var(--legal-black); 
+            line-height: 1.8; 
+        }
+
+        /* PERSISTENT ULTRA-SLIM HEADER (60PX) */
+        header {
+            background: var(--legal-black);
+            position: sticky;
+            top: 0;
+            z-index: 3000;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            border-bottom: 4px solid var(--gold-leaf);
+            height: 60px; 
+            padding: 0 5%;
+        }
+
+        .floating-logo-anchor { 
+            position: absolute;
+            left: 5%;
+            top: 0;
+            height: 0; 
+        }
+
+        .floating-logo-anchor img { 
+            height: 320px; 
+            width: auto; 
+            filter: drop-shadow(0 0 15px var(--gold-glow));
+            animation: divine-glow 5s infinite ease-in-out;
+        }
+
+        @keyframes divine-glow {
+            0%, 100% { filter: drop-shadow(0 0 10px var(--gold-glow)); transform: translateY(0); }
+            50% { filter: drop-shadow(0 0 30px var(--gold-leaf)); transform: translateY(5px); }
+        }
+
+        nav.top-nav { display: flex; gap: 30px; }
+        nav.top-nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2.5px;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* HERO: THE LEGISLATIVE ACADEMY */
+        .yp-hero {
+            padding: 280px 10% 120px;
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('philly-city-council-hall.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            text-align: center;
+            border-bottom: 12px solid var(--gold-leaf);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+        }
+
+        h1 { font-family: 'Cinzel', serif; font-size: 3.5rem; color: white; letter-spacing: 4px; }
+        .trademark-sub { font-family: 'Playfair Display', serif; color: var(--gold-leaf); font-size: 1.5rem; font-style: italic; }
+
+        .content-container { max-width: 1100px; margin: -50px auto 100px; padding: 0 20px; position: relative; z-index: 10; }
+        
+        .parchment-scroll {
+            background: white;
+            border: 1px solid var(--gold-leaf);
+            padding: 70px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .curriculum-card {
+            border-left: 5px solid var(--gold-leaf);
+            padding: 30px;
+            background: var(--marble-white);
+            transition: 0.3s;
+        }
+        .curriculum-card:hover { background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .curriculum-card h3 { font-family: 'Cinzel', serif; color: var(--liturgical-blue); margin-bottom: 15px; }
+
+        /* THE 6-PILLAR CONNECTION */
+        .pillar-integration {
+            background: var(--liturgical-blue);
+            color: white;
+            padding: 50px;
+            margin-top: 60px;
+            text-align: center;
+            border-top: 5px solid var(--gold-leaf);
+        }
+
+        footer {
+            background: var(--legal-black);
+            color: white;
+            padding: 100px 5% 50px;
+            text-align: center;
+            border-top: 15px solid var(--gold-leaf);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="floating-logo-anchor">
+        <img src="COME TO CHRIST TBBLUSA.ORG.png" alt="COME TO CHRIST Logo">
+    </div>
+    
+    <nav class="top-nav">
+        <a href="index.html">The Testament</a>
+        <a href="tier-viability.html">Covenant Tiers</a>
+        <a href="urban-initiatives.html">Urban Engagement</a> 
+        <a href="partnerships.html">Governance</a>
+        <a href="corporate-fellowship.html">Fellowship</a>
+    </nav>
+</header>
+
+<section class="yp-hero">
+    <h1>YOUNG POLITICIANS™</h1>
+    <p class="trademark-sub">"Teaching the Children to Write the Law, Not Break It."</p>
+</section>
+
+<div class="content-container">
+    <div class="parchment-scroll">
+        <h2 style="font-family: 'Cinzel'; text-align: center; font-size: 2.2rem; color: var(--liturgical-blue);">A Trademark of Civic Resurrection</h2>
+        
+        <p style="margin-top: 30px; font-size: 1.1rem; line-height: 2;">
+            At <strong>TBBLUSA.ORG</strong>, we recognize that the urban environment is the most critical area for our defense. We do not force the issue; we provide the solution. <strong>Young Politicians™</strong> is our flagship initiative designed for the kids of Philadelphia—taking those who have lived through the struggle and teaching them the <strong>Mechanics of the Republic</strong>.
+        </p>
+
+        <div class="curriculum-grid">
+            <div class="curriculum-card">
+                <h3>Legislative Literacy</h3>
+                <p>Training youth to analyze governmental laws and understand the civilian leadership necessary to help the community. We teach them to draft the very ordinances that protect our blocks.</p>
+            </div>
+            <div class="curriculum-card">
+                <h3>The Dual Lens</h3>
+                <p>Teaching kids that adhering to governmental laws is the civic mirror of adhering to spiritual truth. We show them that the best leaders are those who have seen through the furnace and learned from it.</p>
+            </div>
+            <div class="curriculum-card">
+                <h3>Urban Defense</h3>
+                <p>Equipping our youth to defend our vision. They are the lifeline of our city, our state, and our world. This program turns potential recidivism into permanent professional leadership.</p>
+            </div>
+        </div>
+
+        <div class="pillar-integration">
+            <h3 style="font-family: 'Cinzel'; color: var(--gold-leaf);">The Stewardship Loop</h3>
+            <p style="margin-top: 15px;">
+                Supported by our <strong>6 Pillars of Stewardship</strong>, this program is funded by a congregation committed to the survival and prosperity of the United States of America. From the $5 member to the World Architect, every dollar defends this curriculum.
+            </p>
+        </div>
+
+        <p style="text-align: center; margin-top: 50px; font-style: italic; font-size: 1.2rem;">
+            "We have learned that support in certain areas is the most important thing an urban environment needs. We provide that support with both arms open."
+        </p>
+    </div>
+</div>
+
+<footer>
+    <img src="COME TO CHRIST TBBLUSA.ORG.png" alt="Logo" style="height: 140px; filter: drop-shadow(0 0 15px var(--gold-leaf)); margin-bottom: 30px;">
+    <p style="font-family: 'Cinzel'; letter-spacing: 3px; font-size: 1.5rem;">TBBLUSA.INFO | PHILADELPHIA DIVISION</p>
+    <p style="font-size: 0.7rem; opacity: 0.5; margin-top: 30px;">YOUNG POLITICIANS™ IS A REGISTERED TRADEMARK OF TBBLUSA.ORG. ALL RIGHTS RESERVED &copy; 2026</p>
+</footer>
+
+</body>
+</html>
