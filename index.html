@@ -10,7 +10,76 @@
     <style>
         :root { --gold: #f2cc60; --steel: #d1d1d1; --dark: #050505; --glow: #00d4ff; }
         body { margin: 0; background: var(--dark); color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+        <script>
+    // --- 3D ENGINE (ACTIVE WITNESS MODE) ---
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    document.getElementById('throne-container').appendChild(renderer.domElement);
+
+    // --- LOAD THE SOLID PLANT ASSET ---
+    const loader = new THREE.TextureLoader();
+    // This looks for your file in the assets folder
+    const vellumTexture = loader.load('assets/page_01_home_axiom.png'); 
+
+    // Create the Plane (16:9 Ratio)
+    const geometry = new THREE.PlaneGeometry(6.4, 3.6); 
+    const material = new THREE.MeshBasicMaterial({ 
+        map: vellumTexture, 
+        transparent: true,
+        side: THREE.DoubleSide 
+    });
+    const vellum = new THREE.Mesh(geometry, material);
+    
+    scene.add(vellum);
+    camera.position.z = 5;
+
+    // --- DYNAMIC SCROLL ARCHITECTURE (GSAP) ---
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Timeline 1: The Vision (Subtle Entry / Witness Port reveal)
+    gsap.to(vellum.rotation, {
+        scrollTrigger: { trigger: "#vision", start: "top top", end: "bottom center", scrub: 1 },
+        y: 0.4, 
+        z: 0.05
+    });
+
+    // Timeline 2: The Gold Array (Coupling Forward Tilt)
+    gsap.to(vellum.rotation, {
+        scrollTrigger: { trigger: "#hardware", start: "top center", end: "bottom center", scrub: 1 },
+        x: 0.7, // Tilts toward the user to show the bottom Gold Array
+        y: -0.2
+    });
+
+    // Timeline 3: Gestation (The Shift to Side)
+    gsap.to(vellum.position, {
+        scrollTrigger: { trigger: "#gestation", start: "top center", end: "bottom center", scrub: 1 },
+        x: 2, // Moves the device to the right to make room for text
+        z: -1 // Recedes slightly
+    });
+
+    // --- RENDER LOOP ---
+    function animate() {
+        requestAnimationFrame(animate);
+
+        // Persistent "Autonomous Breathing" Levitation
+        const time = Date.now() * 0.001;
+        vellum.position.y = Math.sin(time) * 0.12; 
         
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    // Handle Responsive Resize
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+</script>
         /* 3D CANVAS - FIXED BACKGROUND */
         #throne-container { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; pointer-events: none; }
 
