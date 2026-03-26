@@ -9,183 +9,44 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         :root { --gold: #f2cc60; --steel: #d1d1d1; --dark: #050505; --glow: #00d4ff; }
-        body { margin: 0; background: var(--dark); color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        body { margin: 0; background: var(--dark); color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
 
-       <script>
-    // 1. REGISTER THE PLUGIN FIRST
-    gsap.registerPlugin(ScrollTrigger);
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById('throne-container').appendChild(renderer.domElement);
-
-    const loader = new THREE.TextureLoader();
-
-    // 2. LOAD WITH A CALLBACK (Ensures the image is there before animating)
-    loader.load('assets/page_01_home_axiom.png', function(texture) {
-        
-        const geometry = new THREE.PlaneGeometry(6.4, 3.6);
-        const material = new THREE.MeshBasicMaterial({ 
-            map: texture, 
-            transparent: true, 
-            side: THREE.DoubleSide 
-        });
-        const vellum = new THREE.Mesh(geometry, material);
-        scene.add(vellum);
-        camera.position.z = 5;
-
-        // 3. DEFINE MOVEMENTS
-        // Vision Section: Slight Y rotation
-        gsap.to(vellum.rotation, {
-            scrollTrigger: {
-                trigger: "#vision",
-                start: "top top",
-                end: "bottom center",
-                scrub: 1,
-                markers: true // DELETE THIS LINE ONCE IT WORKS
-            },
-            y: 0.6
-        });
-<section class="scroll-section" id="grant" style="background: linear-gradient(to bottom, #0a0a0a, #111);">
-    <div class="contrast-container" style="width: 100%;">
-        <div class="content-box" style="max-width: 800px; border-left: 3px solid var(--glow);">
-            <h1>Opportunity #21260128120838</h1>
-            <h2>The OAK 2026 Pilot: North Philadelphia</h2>
-            <p>KINsense is applying for the <span class="highlight">Strategic Innovation Grant</span> to anchor the world’s first "Kinship Lab" at 22nd & Lehigh. We aren't just building AI; we are building a "Solid Plant" for manufacturing sovereign hardware in the heart of the city.</p>
-        </div>
-
-        <div class="impact-grid" style="margin-top: 40px; padding: 0;">
-            <div class="bento-card">
-                <h3 style="color: var(--glow);">Neighborhood Data Trust</h3>
-                <p>Localized server processing ensures that North Philly’s data never leaves the zip code. We are ending the "Extraction Economy."</p>
-            </div>
-            <div class="bento-card">
-                <h3 style="color: var(--gold);">The Loneliness Tax Credit</h3>
-                <p>By providing every senior citizen in the pilot zone with a Vellum v1, we reduce city healthcare costs associated with social isolation by an estimated 22%.</p>
-            </div>
-            <div class="bento-card">
-                <h3>Solid Plant Jobs</h3>
-                <p>Assembly of the Brushed Steel chassis and Gold Array integration will be handled by local technicians trained at the Kinship Lab.</p>
-            </div>
-        </div>
-
-        <div style="margin-top: 50px; border: 1px solid var(--glow); position: relative; overflow: hidden; border-radius: 12px;">
-            <img src="assets/page_03_pilot_anchor.png" alt="22nd and Lehigh Pilot Anchor" style="width: 100%; opacity: 0.8;">
-            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.8); padding: 10px 20px; border-left: 2px solid var(--glow);">
-                <p style="margin:0; font-size: 0.8rem; letter-spacing: 2px;">STATUS: PENDING BOARD REVIEW (MARCH 19)</p>
-            </div>
-        </div>
-    </div>
-</section>
-        // Hardware Section: Forward Tilt (The Coupling)
-        gsap.to(vellum.rotation, {
-            scrollTrigger: {
-                trigger: "#hardware",
-                start: "top center",
-                end: "bottom center",
-                scrub: 1
-            },
-            x: 0.9,
-            y: -0.3
-        });
-
-        // Gestation Section: Move to Right
-        gsap.to(vellum.position, {
-            scrollTrigger: {
-                trigger: "#gestation",
-                start: "top center",
-                end: "bottom center",
-                scrub: 1
-            },
-            x: 2.5,
-            z: -1
-        });
-
-        // 4. THE ANIMATION LOOP
-        function animate() {
-            requestAnimationFrame(animate);
-            // Constant "Heartbeat" levitation
-            vellum.position.y = Math.sin(Date.now() * 0.001) * 0.1;
-            renderer.render(scene, camera);
-        }
-        animate();
-    });
-
-    // Handle Resize
-    window.addEventListener('resize', () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-    });
-
-            <section class="scroll-section" id="grant">
-    <div class="content-box" style="border-left: 3px solid var(--gold); background: rgba(5,5,5,0.9);">
-        <h1>Grant Mission Control</h1>
-        <p>The Vellum v1 is currently being proposed across <span class="highlight">20 strategic initiatives</span>. We are seeking partners who value data sovereignty and community-led manufacturing.</p>
-    </div>
-
-    <div class="impact-grid" style="margin-top: 30px;">
-        <div class="bento-card" style="border-color: #333;">
-            <h4 style="color: var(--gold);">PHILLY PILOT (NED)</h4>
-            <p style="font-size: 0.8rem; opacity: 0.6;">Status: Archive Review / 2027 Cycle Prep</p>
-        </div>
-        <div class="bento-card" style="border-color: var(--glow);">
-            <h4 style="color: var(--glow);">DARPA DISRUPTIONEERING</h4>
-            <p style="font-size: 0.8rem;">Status: <span style="color: #00ff00;">DRAFTING (Due June 2)</span></p>
-            <p style="font-size: 0.7rem;">Focus: Sovereign Hardware Security</p>
-        </div>
-        <div class="bento-card">
-            <h4>NSF SMART COMMUNITIES</h4>
-            <p style="font-size: 0.8rem;">Status: Research Phase (Due Sept 14)</p>
-            <p style="font-size: 0.7rem;">Focus: 22nd & Lehigh Lab Infrastructure</p>
-        </div>
-    </div>
-
-    <div style="margin-top: 40px; border: 1px solid #222; border-radius: 8px; overflow: hidden;">
-        <img src="assets/global_grant_tracker.png" alt="Global Mission Control" style="width: 100%; filter: grayscale(50%);">
-    </div>
-</section>
-</script>
         /* 3D CANVAS - FIXED BACKGROUND */
         #throne-container { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; pointer-events: none; }
 
+        /* NAV OVERLAY */
+        nav { position: fixed; top: 30px; right: 50px; z-index: 100; display: flex; gap: 20px; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 30px; backdrop-filter: blur(10px); border: 1px solid #333; }
+        nav a { color: white; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; opacity: 0.6; transition: 0.3s; text-transform: uppercase; }
+        nav a:hover { opacity: 1; color: var(--gold); }
+
         /* CONTENT LAYOUT */
         .scroll-section { position: relative; z-index: 2; min-height: 100vh; padding: 100px 10%; display: flex; align-items: center; }
-        .content-box { max-width: 500px; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); padding: 40px; border-left: 2px solid var(--gold); }
+        .content-box { max-width: 500px; background: rgba(0,0,0,0.7); backdrop-filter: blur(15px); padding: 40px; border-left: 2px solid var(--gold); border-radius: 0 10px 10px 0; }
         
-        h1, h2 { color: var(--gold); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 20px; }
+        h1, h2, h3 { color: var(--gold); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 20px; }
         p { line-height: 1.8; color: #ccc; font-size: 1.1rem; }
         .highlight { color: var(--glow); font-weight: bold; }
 
-        /* NAV OVERLAY */
-        nav { position: fixed; top: 30px; right: 50px; z-index: 100; display: flex; gap: 30px; }
-        nav a { color: white; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; opacity: 0.6; transition: 0.3s; }
-        nav a:hover { opacity: 1; color: var(--gold); }
+        /* BENTO GRID */
+        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; margin-top: 30px; }
+        .bento-card { background: #111; padding: 25px; border: 1px solid #222; border-radius: 8px; transition: 0.3s; }
+        .bento-card:hover { border-color: var(--gold); background: #161616; }
 
-        /* BENTO GRID FOR SOCIAL IMPACT */
-        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; z-index: 2; position: relative; padding: 50px 10%; background: #0a0a0a; }
-        .bento-card { background: #111; padding: 30px; border: 1px solid #222; border-radius: 8px; }
-        .bento-card h3 { color: var(--gold); }
+        .full-width { width: 100%; max-width: 1100px; margin: 0 auto; }
+        img.feature-img { width: 100%; border-radius: 12px; border: 1px solid #333; margin-top: 20px; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#vision">VISION</a>
-    <a href="#hardware">HARDWARE</a>
-    <a href="#gestation">GESTATION</a>
-    <a href="#impact">IMPACT</a>
-    <a href="#grant">PHILLY PILOT</a>
+    <a href="#vision">Vision</a>
+    <a href="#hardware">Hardware</a>
+    <a href="#contrast">Vs OpenAI</a>
+    <a href="#legacy">Legacy</a>
+    <a href="#grant">Grant</a>
 </nav>
-<nav>
-    <a href="#vision">VISION</a>
-    <a href="#contrast">CONTRAST</a> <a href="#legacy">LEGACY</a> <a href="#counselor">PROXY</a> <a href="#grant">PHILLY PILOT</a>
-</nav>
-<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; z-index: 1;">
-    <img src="page_01_home_axiom.png" id="hero-image" style="width: 60%; max-width: 800px; filter: drop-shadow(0 0 50px rgba(0,212,255,0.3));">
-</div>
+
+<div id="throne-container"></div>
 
 <section class="scroll-section" id="vision">
     <div class="content-box">
@@ -197,36 +58,25 @@
 <section class="scroll-section" id="hardware">
     <div class="content-box">
         <h2>The Gold Array</h2>
-        <p>Your touch is the authentication. The 24-Pin Gold Array translates your unique bio-electric cadence into a cryptographic key. The device doesn't just listen; it <span class="highlight">couples</span> with you.</p>
-    </div>
-</section>
-
-<section class="scroll-section" id="gestation">
-    <div class="content-box">
-        <h2>Individual & AI</h2>
-        <p>Through a 30-day <span class="highlight">Gestation Period</span>, the Vellum v1 learns your values, your slang, and your truth. It becomes a character that protects your digital legacy, ensuring your "remains" are never exploited.</p>
+        <p>The 24-Pin Gold Array translates your unique bio-electric cadence into a cryptographic key. The device doesn't just listen; it <span class="highlight">couples</span> with you.</p>
     </div>
 </section>
 
 <section class="scroll-section" id="contrast">
-    <div class="contrast-container" style="display: flex; flex-direction: column; gap: 40px; width: 100%;">
-        <div class="content-box" style="max-width: 100%;">
-            <h2>The Sovereign Contrast</h2>
-            <p>OpenAI’s "io" is a tether. <span class="highlight">KINsense is a Root.</span> While others upload your soul to a global server, Vellum v1 keeps your consciousness air-gapped in North Philadelphia steel.</p>
+    <div class="full-width">
+        <div class="content-box" style="max-width: 700px; margin-bottom: 30px;">
+            <h2>Sovereignty vs Surveillance</h2>
+            <p>OpenAI’s "io" is a tether to a corporate cloud. <span class="highlight">KINsense is a Root.</span> We keep your consciousness air-gapped in North Philadelphia steel.</p>
         </div>
-        
-        <div class="image-frame" style="border: 1px solid #333; overflow: hidden; border-radius: 8px;">
-            <img src="assets/page_19_the_contrast.png" alt="Sovereignty vs Surveillance" style="width: 100%; display: block;">
-        </div>
-
-        <div class="impact-grid" style="padding: 0; background: transparent;">
+        <img src="assets/page_19_the_contrast.png" class="feature-img" alt="Comparison">
+        <div class="impact-grid">
             <div class="bento-card">
-                <h4 style="color: var(--gold);">Cloud Utility (Competitors)</h4>
-                <p style="font-size: 0.9rem;">Subscription-based. Data-mined. Expires when the company folds. Tethered to global latency.</p>
+                <h4 style="color: var(--gold);">OpenAI / Competitors</h4>
+                <p>Cloud-tethered. Subscription dependent. Data mined for model training.</p>
             </div>
             <div class="bento-card" style="border-color: var(--glow);">
-                <h4 style="color: var(--glow);">Sovereign Kinship (Vellum v1)</h4>
-                <p style="font-size: 0.9rem;">Owned by right of steel. Air-gapped. Lasts generations. Local-first processing.</p>
+                <h4 style="color: var(--glow);">Vellum v1</h4>
+                <p>Local processing. Owned by right of steel. Air-gapped for generational privacy.</p>
             </div>
         </div>
     </div>
@@ -236,23 +86,80 @@
     <div style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
         <div class="content-box" style="flex: 1; min-width: 300px;">
             <h2>The Legacy Bridge</h2>
-            <p>What happens to your "Remains" in the digital age? The Vellum v1 uses its <span class="highlight">30-Day Gestation</span> to learn your cadence, your slang, and your values. When you are gone, your Kin remains to guide your children, ensuring your family's wisdom is never lost to time.</p>
+            <p>The Vellum v1 uses a <span class="highlight">30-Day Gestation</span> to learn your values. When you are gone, your Kin remains to guide your children.</p>
         </div>
         <div style="flex: 1; min-width: 300px;">
-             <img src="assets/page_20_legacy_bridge.png" alt="The Legacy Handshake" style="width: 100%; border-radius: 50% 50% 0 0; border: 2px solid var(--gold); padding: 10px;">
+             <img src="assets/page_20_legacy_bridge.png" class="feature-img" alt="Legacy Bridge">
         </div>
     </div>
 </section>
 
-<section class="scroll-section" id="counselor" style="background: linear-gradient(to bottom, #050505, #0a0510);">
-    <div class="content-box" style="margin: 0 auto; text-align: center; border-left: none; border-top: 2px solid var(--gold);">
-        <h2>Autonomous Living</h2>
-        <p>The Vellum v1 is your <span class="highlight">Independent Proxy</span>. While you sleep, it handles the logistics. From scheduling medical appointments to forensic-level security via the Witness Protocol, your Kin takes the lead so you can take a breath.</p>
-        <div style="margin-top: 40px;">
-            <img src="assets/page_22_the_proxy.png" alt="The Autonomous Proxy" style="width: 100%; max-width: 900px; border-radius: 8px; box-shadow: 0 0 30px rgba(242, 204, 96, 0.2);">
+<section class="scroll-section" id="grant">
+    <div class="full-width">
+        <div class="content-box" style="max-width: 800px;">
+            <h1>Grant Mission Control</h1>
+            <p>The Vellum v1 is currently being proposed across <span class="highlight">20 strategic initiatives</span> including DARPA and the NSF.</p>
         </div>
+        <div class="impact-grid">
+            <div class="bento-card">
+                <h4 style="color: var(--gold);">Philly Pilot (OAK 2026)</h4>
+                <p>Status: Preparation. Focus: 22nd & Lehigh Lab Infrastructure.</p>
+            </div>
+            <div class="bento-card">
+                <h4 style="color: var(--glow);">DARPA Disruptioneering</h4>
+                <p>Status: Drafting. Focus: Sovereign Hardware Security.</p>
+            </div>
+        </div>
+        <img src="assets/global_grant_tracker.png" class="feature-img" alt="Global Tracker">
     </div>
 </section>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('throne-container').appendChild(renderer.domElement);
+
+    const loader = new THREE.TextureLoader();
+    loader.load('assets/page_01_home_axiom.png', function(texture) {
+        const geometry = new THREE.PlaneGeometry(6.4, 3.6);
+        const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true, side: THREE.DoubleSide });
+        const vellum = new THREE.Mesh(geometry, material);
+        scene.add(vellum);
+        camera.position.z = 5;
+
+        // ANIMATIONS
+        gsap.to(vellum.rotation, {
+            scrollTrigger: { trigger: "#vision", start: "top top", end: "bottom top", scrub: 1 },
+            y: 0.6
+        });
+
+        gsap.to(vellum.rotation, {
+            scrollTrigger: { trigger: "#hardware", start: "top center", end: "bottom center", scrub: 1 },
+            x: 0.9, y: -0.3
+        });
+
+        gsap.to(vellum.position, {
+            scrollTrigger: { trigger: "#contrast", start: "top center", end: "bottom center", scrub: 1 },
+            x: -3, scale: 0.7
+        });
+
+        function animate() {
+            requestAnimationFrame(animate);
+            vellum.position.y = Math.sin(Date.now() * 0.001) * 0.1;
+            renderer.render(scene, camera);
+        }
+        animate();
+    });
+
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
 </script>
 
 </body>
