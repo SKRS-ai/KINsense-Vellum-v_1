@@ -11,28 +11,28 @@
         :root { --gold: #f2cc60; --steel: #d1d1d1; --dark: #050505; --glow: #00d4ff; --danger: #ff4b2b; }
         body { margin: 0; background: var(--dark); color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
 
-        /* 3D CANVAS */
+        /* 3D CANVAS - THE CORE LIVES HERE */
         #throne-container { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; pointer-events: none; }
 
-        /* GLOBAL NAV (The Fortress Access) */
-        nav { position: fixed; top: 20px; right: 20px; z-index: 100; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; max-width: 80%; }
-        nav a { background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; text-decoration: none; font-size: 0.65rem; padding: 8px 12px; border-radius: 20px; letter-spacing: 1px; transition: 0.3s; text-transform: uppercase; backdrop-filter: blur(5px); }
-        nav a:hover { border-color: var(--gold); color: var(--gold); }
-        nav a.active { border-color: var(--glow); color: var(--glow); }
+        /* MISSION CONTROL NAV */
+        nav { position: fixed; top: 20px; right: 20px; z-index: 100; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; max-width: 85%; }
+        nav a { background: rgba(0,0,0,0.7); border: 1px solid #333; color: white; text-decoration: none; font-size: 0.65rem; padding: 10px 16px; border-radius: 20px; letter-spacing: 1px; transition: 0.3s; text-transform: uppercase; backdrop-filter: blur(10px); }
+        nav a:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+        nav a.active { border-color: var(--glow); color: var(--glow); box-shadow: 0 0 15px rgba(0,212,255,0.3); }
 
         .scroll-section { position: relative; z-index: 2; min-height: 100vh; padding: 100px 10%; display: flex; align-items: center; }
-        .content-box { max-width: 550px; background: rgba(0,0,0,0.8); backdrop-filter: blur(20px); padding: 50px; border-left: 4px solid var(--gold); box-shadow: 20px 0 50px rgba(0,0,0,0.5); }
+        .content-box { max-width: 550px; background: rgba(0,0,0,0.85); backdrop-filter: blur(20px); padding: 50px; border-left: 4px solid var(--gold); box-shadow: 25px 0 60px rgba(0,0,0,0.6); }
         
-        h1, h2 { color: var(--gold); text-transform: uppercase; letter-spacing: 8px; margin-bottom: 25px; line-height: 1.2; }
+        h1, h2 { color: var(--gold); text-transform: uppercase; letter-spacing: 8px; margin-bottom: 25px; line-height: 1.1; }
         p { line-height: 1.8; color: #bbb; font-size: 1.15rem; }
         .highlight { color: var(--glow); font-weight: bold; }
         .warning { color: var(--danger); font-weight: bold; }
 
-        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
-        .bento-card { background: #0a0a0a; padding: 30px; border: 1px solid #222; border-radius: 4px; border-top: 2px solid #333; }
-        .bento-card h3 { color: var(--gold); font-size: 0.9rem; margin-bottom: 15px; }
+        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+        .bento-card { background: #0c0c0c; padding: 35px; border: 1px solid #222; border-radius: 4px; border-top: 3px solid #444; }
+        .bento-card h3 { color: var(--gold); font-size: 0.85rem; margin-bottom: 20px; letter-spacing: 2px; }
 
-        footer { position: relative; z-index: 2; padding: 50px 10%; background: #000; border-top: 1px solid #222; font-size: 0.8rem; color: #555; }
+        footer { position: relative; z-index: 2; padding: 60px 10%; background: #000; border-top: 1px solid #222; font-size: 0.75rem; color: #444; letter-spacing: 3px; text-align: center; }
     </style>
 </head>
 <body>
@@ -51,7 +51,7 @@
 <section class="scroll-section" id="vision">
     <div class="content-box">
         <h1>Vellum v1</h1>
-        <p>The first <span class="highlight">Inherent Hardware</span>. A Core Brain Module designed not as a phone, but as a sovereign extension of the human soul. Built in Philadelphia. Owned by you.</p>
+        <p>The first <span class="highlight">Inherent Hardware</span>. A Core Brain Module designed not as a phone, but as a sovereign extension of the human soul. Built in North Philadelphia. <br><br>Owned by you. <strong>Witnessed by Kin.</strong></p>
     </div>
 </section>
 
@@ -59,16 +59,16 @@
     <div style="width: 100%;">
         <div class="content-box">
             <h2>The Sweetpea Trap</h2>
-            <p>OpenAI’s "Sweetpea" (io) is a <span class="warning">Cloud Tether</span>. It exports your voice, your family, and your remains to a corporate server. Vellum v1 is a <span class="highlight">Root</span>. It keeps your consciousness in the steel.</p>
+            <p>OpenAI’s "Sweetpea" (io) is a <span class="warning">Cloud Extraction Tool</span>. It exports your voice, your family secrets, and your digital remains to a global server. <br><br>Vellum v1 is a <strong>Root</strong>. We keep your consciousness air-gapped in brushed steel.</p>
         </div>
         <div class="impact-grid">
             <div class="bento-card" style="border-top-color: var(--danger);">
                 <h3>SURVEILLANCE UTILITY (Sweetpea)</h3>
-                <p>Cloud-based processing. Subscription required. Data mined for corporate evolution.</p>
+                <p>Cloud processing. Persistent data mining. Owned by the corporation. Subscription dependent.</p>
             </div>
             <div class="bento-card" style="border-top-color: var(--glow);">
                 <h3>SOVEREIGN KINSHIP (Vellum v1)</h3>
-                <p>Local NPU processing. Air-gapped security. Owned by right of steel.</p>
+                <p>Local NPU processing. Zero cloud tether. Owned by right of steel. Air-gapped for life.</p>
             </div>
         </div>
     </div>
@@ -77,12 +77,12 @@
 <section class="scroll-section" id="hardware">
     <div class="content-box">
         <h2>24-Pin Coupling</h2>
-        <p>The Gold Array is your <span class="highlight">Biometric Handshake</span>. It translates your bio-electric cadence into the only key that can unlock your Kin. No passwords. No backdoors.</p>
+        <p>The Gold Array is your <span class="highlight">Biometric Handshake</span>. It translates your bio-electric cadence into the only key that can unlock your Kin. <br><br>No passwords. No corporate backdoors. No compromise.</p>
     </div>
 </section>
 
 <footer>
-    SOLOMON KIN RECORDS | KINSENSE VELLUM v1 | OAK 2026 PILOT | PHILADELPHIA, PA
+    SOLOMON KIN RECORDS | KINSENSE VELLUM v1 | OAK 2026 PILOT | 22ND & LEHIGH, PHILLY
 </footer>
 
 <script>
@@ -110,16 +110,17 @@
 
         gsap.to(vellum.position, {
             scrollTrigger: { trigger: "#contrast", start: "top center", end: "bottom center", scrub: 1 },
-            x: 2.5, scale: 0.8
+            x: 2.2, scale: 0.85
         });
 
         gsap.to(vellum.rotation, {
             scrollTrigger: { trigger: "#hardware", start: "top center", end: "bottom center", scrub: 1 },
-            x: 1.2, y: -0.2
+            x: 1.1, y: -0.3
         });
 
         function animate() {
             requestAnimationFrame(animate);
+            // Autonomous Levitation
             vellum.position.y = Math.sin(Date.now() * 0.001) * 0.15;
             renderer.render(scene, camera);
         }
