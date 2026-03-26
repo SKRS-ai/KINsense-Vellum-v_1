@@ -43,7 +43,9 @@
     <a href="#grant">PHILLY PILOT</a>
 </nav>
 
-<div id="throne-container"></div>
+<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; z-index: 1;">
+    <img src="assets/page_01_home_axiom.png" id="hero-image" style="width: 60%; max-width: 800px; filter: drop-shadow(0 0 50px rgba(0,212,255,0.3));">
+</div>
 
 <section class="scroll-section" id="vision">
     <div class="content-box">
@@ -81,50 +83,7 @@
     </div>
 </div>
 
-<script>
-    // --- 3D ENGINE (THREE.JS) ---
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById('throne-container').appendChild(renderer.domElement);
-
-    // Brushed Steel Lighting
-    const light1 = new THREE.DirectionalLight(0xffffff, 1);
-    light1.position.set(2, 2, 5);
-    scene.add(light1);
-    const goldLight = new THREE.PointLight(0xf2cc60, 2);
-    goldLight.position.set(0, -2, 1);
-    scene.add(goldLight);
-
-    // Placeholder Geometry (Replace with your vellum_v1.glb)
-    const geometry = new THREE.BoxGeometry(2, 1.2, 0.4);
-    const material = new THREE.MeshStandardMaterial({ color: 0x888888, metalness: 0.9, roughness: 0.1 });
-    const vellum = new THREE.Mesh(geometry, material);
-    scene.add(vellum);
-    camera.position.z = 5;
-
-    // --- SCROLL ANIMATION (GSAP) ---
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.to(vellum.rotation, {
-        scrollTrigger: { trigger: "#vision", start: "top top", end: "bottom bottom", scrub: true },
-        y: Math.PI * 2
-    });
-
-    gsap.to(vellum.position, {
-        scrollTrigger: { trigger: "#hardware", start: "top center", end: "bottom center", scrub: true },
-        z: 2,
-        x: 1.5,
-        rotationX: 1.5 // Tilts to show the Gold Array
-    });
-
-    function animate() {
-        requestAnimationFrame(animate);
-        vellum.position.y = Math.sin(Date.now() * 0.001) * 0.1; // Levitation
-        renderer.render(scene, camera);
-    }
-    animate();
+   <script>
 </script>
 
 </body>
