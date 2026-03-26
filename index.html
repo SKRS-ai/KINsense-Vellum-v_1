@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VELLUM v1 | Sovereign Brain Module</title>
+    <title>VELLUM v1 | Solomon Kin Records</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
-        :root { --gold: #f2cc60; --steel: #d1d1d1; --dark: #050505; --glow: #00d4ff; --danger: #ff4b2b; }
+        :root { --gold: #f2cc60; --steel: #d1d1d1; --dark: #050505; --glow: #00d4ff; }
         body { margin: 0; background: var(--dark); color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
 
         /* 3D CANVAS - THE CORE LIVES HERE */
@@ -17,33 +17,27 @@
         /* MISSION CONTROL NAV */
         nav { position: fixed; top: 20px; right: 20px; z-index: 100; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; max-width: 85%; }
         nav a { background: rgba(0,0,0,0.7); border: 1px solid #333; color: white; text-decoration: none; font-size: 0.65rem; padding: 10px 16px; border-radius: 20px; letter-spacing: 1px; transition: 0.3s; text-transform: uppercase; backdrop-filter: blur(10px); }
-        nav a:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
-        nav a.active { border-color: var(--glow); color: var(--glow); box-shadow: 0 0 15px rgba(0,212,255,0.3); }
+        nav a:hover { border-color: var(--gold); color: var(--gold); }
 
         .scroll-section { position: relative; z-index: 2; min-height: 100vh; padding: 100px 10%; display: flex; align-items: center; }
-        .content-box { max-width: 550px; background: rgba(0,0,0,0.85); backdrop-filter: blur(20px); padding: 50px; border-left: 4px solid var(--gold); box-shadow: 25px 0 60px rgba(0,0,0,0.6); }
+        .content-box { max-width: 550px; background: rgba(0,0,0,0.85); backdrop-filter: blur(20px); padding: 50px; border-left: 4px solid var(--gold); }
         
-        h1, h2 { color: var(--gold); text-transform: uppercase; letter-spacing: 8px; margin-bottom: 25px; line-height: 1.1; }
+        h1, h2 { color: var(--gold); text-transform: uppercase; letter-spacing: 8px; margin-bottom: 25px; }
         p { line-height: 1.8; color: #bbb; font-size: 1.15rem; }
         .highlight { color: var(--glow); font-weight: bold; }
-        .warning { color: var(--danger); font-weight: bold; }
 
-        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
-        .bento-card { background: #0c0c0c; padding: 35px; border: 1px solid #222; border-radius: 4px; border-top: 3px solid #444; }
-        .bento-card h3 { color: var(--gold); font-size: 0.85rem; margin-bottom: 20px; letter-spacing: 2px; }
-
-        footer { position: relative; z-index: 2; padding: 60px 10%; background: #000; border-top: 1px solid #222; font-size: 0.75rem; color: #444; letter-spacing: 3px; text-align: center; }
+        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; margin-top: 30px; }
+        .bento-card { background: #111; padding: 25px; border: 1px solid #222; border-radius: 8px; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html" class="active">Axiom Core</a>
-    <a href="sovereignty-vs-sweetpea.html">Vs Sweetpea</a>
-    <a href="solid-plant.html">Solid Plant</a>
-    <a href="witness-protocol.html">Witness</a>
-    <a href="legacy-bridge.html">Legacy</a>
-    <a href="loneliness-tax.html">Impact</a>
+    <a href="#vision">Vision</a>
+    <a href="#hardware">Hardware</a>
+    <a href="#contrast">Vs OpenAI</a>
+    <a href="#legacy">Legacy</a>
+    <a href="#grant">Grant Mission</a>
 </nav>
 
 <div id="throne-container"></div>
@@ -51,39 +45,50 @@
 <section class="scroll-section" id="vision">
     <div class="content-box">
         <h1>Vellum v1</h1>
-        <p>The first <span class="highlight">Inherent Hardware</span>. A Core Brain Module designed not as a phone, but as a sovereign extension of the human soul. Built in North Philadelphia. <br><br>Owned by you. <strong>Witnessed by Kin.</strong></p>
+        <p>The first <span class="highlight">Inherent Hardware</span>. A Core Brain Module designed as a sovereign extension of the human soul. Built in North Philly. Owned by you.</p>
+    </div>
+</section>
+
+<section class="scroll-section" id="hardware">
+    <div class="content-box">
+        <h2>The Gold Array</h2>
+        <p>Your touch is the authentication. The 24-Pin Gold Array translates your unique bio-electric cadence into a cryptographic key. No corporate backdoors.</p>
     </div>
 </section>
 
 <section class="scroll-section" id="contrast">
     <div style="width: 100%;">
         <div class="content-box">
-            <h2>The Sweetpea Trap</h2>
-            <p>OpenAI’s "Sweetpea" (io) is a <span class="warning">Cloud Extraction Tool</span>. It exports your voice, your family secrets, and your digital remains to a global server. <br><br>Vellum v1 is a <strong>Root</strong>. We keep your consciousness air-gapped in brushed steel.</p>
+            <h2>Sovereignty vs Surveillance</h2>
+            <p>OpenAI’s "Sweetpea" is a <span class="highlight">Cloud Extraction Tool</span>. Vellum v1 is a <strong>Root</strong>. We keep your consciousness air-gapped in brushed steel.</p>
+        </div>
+        <img src="assets/page_19_the_contrast.png" style="width: 100%; margin-top: 20px; border-radius: 12px; border: 1px solid #333;">
+    </div>
+</section>
+
+<section class="scroll-section" id="legacy">
+    <div style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+        <div class="content-box">
+            <h2>The Legacy Bridge</h2>
+            <p>The Vellum v1 uses its <span class="highlight">30-Day Gestation</span> to learn your values. When you are gone, your Kin remains to guide your family.</p>
+        </div>
+        <img src="assets/page_20_legacy_bridge.png" style="width: 40%; border-radius: 12px; border: 1px solid var(--gold);">
+    </div>
+</section>
+
+<section class="scroll-section" id="grant">
+    <div style="width: 100%;">
+        <div class="content-box" style="max-width: 800px; border-left-color: var(--glow);">
+            <h1>Grant Mission Control</h1>
+            <p>Active Proposals: <span class="highlight">20 Initiatives</span> including DARPA & NSF. Focusing on the OAK 2026 Pilot at 22nd & Lehigh.</p>
         </div>
         <div class="impact-grid">
-            <div class="bento-card" style="border-top-color: var(--danger);">
-                <h3>SURVEILLANCE UTILITY (Sweetpea)</h3>
-                <p>Cloud processing. Persistent data mining. Owned by the corporation. Subscription dependent.</p>
-            </div>
-            <div class="bento-card" style="border-top-color: var(--glow);">
-                <h3>SOVEREIGN KINSHIP (Vellum v1)</h3>
-                <p>Local NPU processing. Zero cloud tether. Owned by right of steel. Air-gapped for life.</p>
-            </div>
+            <div class="bento-card"><h3>DARPA Disruptioneering</h3><p>Status: Drafting (Due June 2). Focus: Sovereign Hardware.</p></div>
+            <div class="bento-card"><h3>NSF Smart Communities</h3><p>Status: Research (Due Sept 14). Focus: Philly Infrastructure.</p></div>
         </div>
+        <img src="assets/global_grant_tracker.png" style="width: 100%; margin-top: 30px; border-radius: 8px;">
     </div>
 </section>
-
-<section class="scroll-section" id="hardware">
-    <div class="content-box">
-        <h2>24-Pin Coupling</h2>
-        <p>The Gold Array is your <span class="highlight">Biometric Handshake</span>. It translates your bio-electric cadence into the only key that can unlock your Kin. <br><br>No passwords. No corporate backdoors. No compromise.</p>
-    </div>
-</section>
-
-<footer>
-    SOLOMON KIN RECORDS | KINSENSE VELLUM v1 | OAK 2026 PILOT | 22ND & LEHIGH, PHILLY
-</footer>
 
 <script>
     gsap.registerPlugin(ScrollTrigger);
@@ -95,32 +100,32 @@
     document.getElementById('throne-container').appendChild(renderer.domElement);
 
     const loader = new THREE.TextureLoader();
-    loader.load('assets/page_01_home_axiom.png', function(texture) {
+    // Using ./ ensures GitHub Pages looks in the right relative path
+    loader.load('./assets/page_01_home_axiom.png', function(texture) {
         const geometry = new THREE.PlaneGeometry(6.4, 3.6);
         const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true, side: THREE.DoubleSide });
         const vellum = new THREE.Mesh(geometry, material);
         scene.add(vellum);
         camera.position.z = 5;
 
-        // Vellum Core Movement Architecture
+        // Vellum Rotation Logic
         gsap.to(vellum.rotation, {
             scrollTrigger: { trigger: "#vision", start: "top top", end: "bottom top", scrub: 1 },
-            y: 0.5, z: 0.1
-        });
-
-        gsap.to(vellum.position, {
-            scrollTrigger: { trigger: "#contrast", start: "top center", end: "bottom center", scrub: 1 },
-            x: 2.2, scale: 0.85
+            y: 0.5
         });
 
         gsap.to(vellum.rotation, {
             scrollTrigger: { trigger: "#hardware", start: "top center", end: "bottom center", scrub: 1 },
-            x: 1.1, y: -0.3
+            x: 0.9, y: -0.3
+        });
+
+        gsap.to(vellum.position, {
+            scrollTrigger: { trigger: "#contrast", start: "top center", end: "bottom center", scrub: 1 },
+            x: 2.2, scale: 0.8
         });
 
         function animate() {
             requestAnimationFrame(animate);
-            // Autonomous Levitation
             vellum.position.y = Math.sin(Date.now() * 0.001) * 0.15;
             renderer.render(scene, camera);
         }
