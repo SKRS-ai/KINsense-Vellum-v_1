@@ -51,7 +51,25 @@
     </style>
 </head>
 <body>
+/* Update this specific class in your <style> block */
+.manual-section img {
+    width: 100%;       /* Scalable to the width of the box */
+    height: auto;      /* Maintains aspect ratio */
+    max-width: 800px;  /* Prevents it from getting TOO big on desktop */
+    display: block;
+    margin: 20px auto; /* Centers the image */
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
 
+/* Remove the fixed height from your placeholder class if it's still there */
+.diagram-placeholder {
+    width: 100%;
+    height: auto; /* Changed from 300px */
+    background: transparent;
+    border: none;
+}
 <div class="container">
     <header>
         <h1>VELLUM v1: OPERATIONAL MANUAL</h1>
