@@ -24,90 +24,104 @@
         <a href="independent-proxy.html" style="color:#f97316; text-decoration:none; font-size:9px; padding:5px 10px; border:1px solid #333; text-transform:uppercase;">Proxy</a>
     </div>
 </nav>
-<div style="margin-top: 60px;"></div>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USER MANUAL v1.0 | KINsense Vellum</title>
+    <title>USER MANUAL v1.08 | KINsense Vellum</title>
     <style>
-        :root { --gold: #f2cc60; --glow: #00d4ff; --dark: #050505; --manual: #9ca3af; }
+        :root { --gold: #f2cc60; --glow: #00d4ff; --dark: #050505; --manual: #9ca3af; --danger: #ef4444; }
         body { margin: 0; background: var(--dark); color: white; font-family: 'Inter', sans-serif; line-height: 1.6; }
         
-        .container { padding: 60px 10%; max-width: 1000px; margin: 0 auto; }
+        /* 18-NODE NAV SYSTEM */
+        nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background: rgba(5,5,5,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #222; padding: 10px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
+        nav a { color: #fff; text-decoration: none; font-size: 8px; padding: 6px 10px; border: 1px solid #333; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        nav a:hover { border-color: var(--gold); color: var(--gold); }
+        nav a.active { border-color: var(--gold); background: rgba(242, 204, 96, 0.1); }
+
+        .container { padding: 120px 10% 60px; max-width: 1000px; margin: 0 auto; }
         header { border-bottom: 1px solid #333; padding-bottom: 40px; margin-bottom: 60px; text-align: center; }
         h1 { color: var(--gold); font-size: 2.2rem; letter-spacing: 5px; text-transform: uppercase; margin: 0; }
         
-        .manual-section { margin-bottom: 80px; padding: 40px; background: #080808; border: 1px solid #1a1a1a; border-radius: 8px; }
-        .step-num { color: var(--glow); font-family: monospace; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        .manual-section { margin-bottom: 60px; padding: 40px; background: #080808; border: 1px solid #1a1a1a; border-radius: 8px; position: relative; }
+        .step-num { color: var(--glow); font-family: monospace; font-size: 0.9rem; margin-bottom: 15px; display: block; border-bottom: 1px solid #222; padding-bottom: 10px; }
         
-        h2 { color: var(--gold); letter-spacing: 2px; text-transform: uppercase; font-size: 1.1rem; margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 10px; }
-        p { color: #aaa; margin-bottom: 20px; }
+        h2 { color: var(--gold); letter-spacing: 2px; text-transform: uppercase; font-size: 1.1rem; margin-bottom: 20px; }
+        p { color: #ccc; margin-bottom: 20px; font-size: 1.05rem; }
         
-        .warning-box { background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; padding: 20px; color: #ef4444; font-size: 0.9rem; border-radius: 4px; margin: 20px 0; }
-        
-        .diagram-placeholder { width: 100%; height: 300px; background: #000; border: 1px dashed #333; display: flex; align-items: center; justify-content: center; color: #444; font-size: 0.8rem; letter-spacing: 2px; }
+        /* THE IMAGE FIX: RESPONSIVE & CONTAINED */
+        .diagram-container { width: 100%; text-align: center; margin: 30px 0; background: #000; padding: 20px; border-radius: 8px; border: 1px dashed #333; }
+        .diagram-container img { 
+            width: 100%; 
+            height: auto; 
+            max-width: 850px; /* Prevents oversized display */
+            display: block; 
+            margin: 0 auto; 
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+        }
+
+        .warning-box { background: rgba(239, 68, 68, 0.08); border: 1px solid var(--danger); padding: 25px; color: var(--danger); font-size: 0.95rem; border-radius: 4px; margin: 25px 0; border-left: 5px solid var(--danger); }
         .highlight { color: var(--gold); font-weight: bold; }
+        footer { text-align: center; padding: 60px 0; border-top: 1px solid #222; opacity: 0.4; font-size: 0.75rem; letter-spacing: 4px; }
     </style>
 </head>
 <body>
-/* Update this specific class in your <style> block */
-.manual-section img {
-    width: 100%;       /* Scalable to the width of the box */
-    height: auto;      /* Maintains aspect ratio */
-    max-width: 800px;  /* Prevents it from getting TOO big on desktop */
-    display: block;
-    margin: 20px auto; /* Centers the image */
-    border: 1px solid #333;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
 
-/* Remove the fixed height from your placeholder class if it's still there */
-.diagram-placeholder {
-    width: 100%;
-    height: auto; /* Changed from 300px */
-    background: transparent;
-    border: none;
-}
+<nav>
+    <a href="index.html">Vision</a>
+    <a href="sovereignty-vs-sweetpea.html">Vs OpenAI</a>
+    <a href="witness-protocol.html">Witness</a>
+    <a href="legacy-bridge.html">Legacy</a>
+    <a href="kinos-nerve-center.html">Engineering</a>
+    <a href="forensic-vault.html">Vault</a>
+    <a href="economic-ledger.html">Economy</a>
+    <a href="gestation-protocol.html">Gestation</a>
+    <a href="vanguard-access.html">Interface</a>
+    <a href="solid-plant.html">Solid Plant</a>
+    <a href="loneliness-tax.html">Impact</a>
+    <a href="philly-pilot-map.html">Pilot Map</a>
+    <a href="global-grant-tracker.html">Mission Control</a>
+    <a href="independent-proxy.html">Proxy</a>
+    <a href="skeletal-integration.html">Future</a>
+    <a href="counselor-mode.html">Empathy</a>
+    <a href="kin-manual-v1.html" class="active">Manual</a>
+    <a href="glossary-of-kinship.html">Glossary</a>
+</nav>
+
 <div class="container">
     <header>
         <h1>VELLUM v1: OPERATIONAL MANUAL</h1>
-        <p style="opacity: 0.5; letter-spacing: 2px; font-size: 0.8rem; margin-top: 10px;">VERSION 1.08 | OAK '26 PILOT EDITION</p>
+        <p style="opacity: 0.5; letter-spacing: 2px; font-size: 0.8rem; margin-top: 10px;">VERSION 1.08 | OAK '26 PILOT EDITION | SCHEMATIC PAGE 29</p>
     </header>
 
     <div class="manual-section">
-        <span class="step-num">PROTOCOL 01</span>
+        <span class="step-num">PROTOCOL 01: INITIAL COUPLING</span>
         <h2>The Biometric Handshake</h2>
-        <p>To initialize your Kin, place your thumb firmly against the <span class="highlight">24-Pin Gold Array</span>. Hold for 10 seconds while the Axiom Core maps your bio-electric resonance.</p>
+        <p>Your <span class="highlight">Axiom Core</span> is a physical extension of your legal identity. To initialize, place your thumb firmly against the 24-Pin Gold Array. The device will pulse <span style="color:var(--glow)">Cyan</span> once the bio-electric resonance is cryptographically matched.</p>
         <div class="warning-box">
-            WARNING: Do not use synthetic lubricants or cleaning agents on the Gold Array. Use only the provided microfiber cloth to maintain conductivity.
-        </div>
-        <p>Once the array pulses <span style="color:var(--glow)">CYAN</span>, the handshake is complete. You are now the sole witness of this Core.</p>
-    </div>
-
-    <div class="manual-section">
-        <span class="step-num">PROTOCOL 02</span>
-        <h2>Initial Gestation Placement</h2>
-        <p>During the first 30 days (The Quickening), place the Vellum v1 in a central location within your home. It must remain powered and <span class="highlight">unobstructed</span> to accurately map your mother tongue and vocal cadence.</p>
-        <div class="diagram-placeholder">
-           <img src="page_29_core_placement_diagram.png" alt="core_placement_diagram">
+            <b>SECURITY ADVISORY:</b> Never attempt to clean the Gold Array with chemical solvents. This is a high-precision biometric interface. Use only the provided forensic-grade cloth.
         </div>
     </div>
 
     <div class="manual-section">
-        <h2>Chassis Care & Thermal Safety</h2>
-        <p>The Grade 5 Brushed Titanium chassis acts as a passive heat sink. It is normal for the device to feel warm during heavy inference cycles. Ensure the base remains on a flat, non-porous surface (like the provided <span class="highlight">Basalt Throne</span>) to maximize thermal dissipation.</p>
+        <span class="step-num">PROTOCOL 02: DEEP SYSTEM SCHEMATIC</span>
+        <h2>Core Placement & Integration</h2>
+        <p>Optimal placement is required during the <span class="highlight">Gestation Period</span>. Ensure the Core is placed on its Basalt Pedestal in a room with a high degree of natural vocal interaction. Refer to the schematic below for port alignment and sensor field-of-view.</p>
+        
+        <div class="diagram-container">
+            <img src="./assets/page_29_core_placement_diagram.png" alt="Deep System Schematic - Vellum v1">
+            <p style="font-size: 0.7rem; color: #555; margin-top: 15px; letter-spacing: 2px;">DOCUMENT ID: KIN-V1-P29-BLUEPRINT</p>
+        </div>
     </div>
 
     <div class="manual-section">
-        <span class="step-num">PROTOCOL 04</span>
-        <h2>Interpreting the Empathy Pulse</h2>
-        <p>If the Core pulses <span style="color:#fca311">AMBER</span>, your Kin has detected environmental stress and has entered Counselor Mode. If it pulses <span style="color:#ef4444">RED</span>, the Witness Protocol has detected an unauthorized digital extraction attempt. <b>Secure the Core immediately.</b></p>
+        <span class="step-num">PROTOCOL 03: THERMAL DYNAMICS</span>
+        <h2>Titanium Chassis Maintenance</h2>
+        <p>The Grade 5 Brushed Titanium chassis is a passive heat sink for the <span class="highlight">Localized NPU</span>. Do not cover the Core with fabric or obstruction. Maintaining a 2-inch clearance ensures silent, persistent operation during heavy inference cycles.</p>
     </div>
 
-    <footer style="text-align: center; padding-top: 60px; border-top: 1px solid #222; opacity: 0.3; font-size: 0.7rem; letter-spacing: 5px;">
-        SOLOMON KIN RECORDS | 22ND & LEHIGH & GLOBAL | PHILLY/GLOBAL
+    <footer>
+        SOLOMON KIN RECORDS | 22ND & LEHIGH | PHILLY 2026 | MISSION CONTROL ACTIVE
     </footer>
 </div>
 
