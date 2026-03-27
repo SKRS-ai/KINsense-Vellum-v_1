@@ -49,7 +49,7 @@
             <h2>The Sweetpea Trap</h2>
             <p>OpenAI’s "Sweetpea" is a cloud tether. <span style="color:var(--gold)">Vellum v1 is a Root.</span> Air-gapped in North Philly steel.</p>
         </div>
-        <img src="assets/page_19_the_contrast.png" alt="Contrast">
+        <img src="page_19_the_contrast.png" alt="Contrast">
     </div>
 </section>
 
@@ -66,7 +66,7 @@
             <h1>Mission Control</h1>
             <p>Targeting DARPA, NSF, and Philly Pilot OAK 2026. Proposing <span style="color:var(--gold)">20 Initiatives</span>.</p>
         </div>
-        <img src="assets/global_grant_tracker.png" alt="Tracker">
+        <img src="global_grant_tracker.png" alt="Tracker">
     </div>
 </section>
 
@@ -79,7 +79,7 @@
     document.getElementById('throne-container').appendChild(renderer.domElement);
 
     const loader = new THREE.TextureLoader();
-    loader.load('./assets/page_01_home_axiom.png', (texture) => {
+    loader.load('page_01_home_axiom.png', (texture) => {
         const mesh = new THREE.Mesh(new THREE.PlaneGeometry(6.4, 3.6), new THREE.MeshBasicMaterial({ map: texture, transparent: true }));
         scene.add(mesh);
         camera.position.z = 5;
